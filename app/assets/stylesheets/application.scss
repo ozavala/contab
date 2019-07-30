@@ -1,0 +1,26 @@
+
+@import 'bootstrap';
+
+$yellow-pale: #ffef98;
+$green-olive: #96b183;
+$green-pale: #bfdeb9;
+
+  #transaction {
+   label{
+  text-align: center;
+  font-size: 12px;
+  border: solid;
+  border-width: thin;
+  margin: 0px;
+  background-color: $green-olive;
+}
+
+input {
+  margin: 0px;
+  font-size: 12px;
+  border-radius: 0px;
+  border-width: thin;
+  padding: 1px;
+  background-color: $yellow-pale;
+  text-align: center;
+}}

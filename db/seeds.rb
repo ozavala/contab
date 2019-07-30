@@ -45,93 +45,111 @@ GlAccount.destroy_all
 assets.gl_accounts.create(
   account_code: '1',
   name: 'ASSETS',
-  parent_id: nil
+  parent_account: nil,
+  description: nil
 )
+
 assets.gl_accounts.create(
   account_code: '10',
   name: 'CURRENT ASSETS',
-  parent_id: '1'
+  parent_account: '1',
+  description: nil
 )
+
 assets.gl_accounts.create(
   account_code: '100',
   name: 'Cash',
-  parent_id: '10',
+  parent_account: '10',
   description: 'Petty Cash'
 )
+
 assets.gl_accounts.create(
   account_code: '101',
   name: 'Cash in Wallet',
-  parent_id: '10',
+  parent_account: '10',
   description: 'Cash in Wallet'
 )
+
 assets.gl_accounts.create(
   account_code: '102',
   name: 'Cheking Account',
-  parent_id: '10',
+  parent_account: '10',
   description: 'Checking Account'
 )
 
 assets.gl_accounts.create(
   account_code: '103',
   name: 'Savings Account',
-  parent_id: '10',
+  parent_account: '10',
   description: 'Savings Account'
 )
-equity.gl_accounts.create(
-  account_code: '3',
-  name: 'EQUITY',
-  parent_id: nil,
-  description: 'Equity'
-)
-equity.gl_accounts.create(
-  account_code: '31',
-  name: 'Opening Balances',
-  parent_id: 3,
-  description: 'Opening Balances'
-)
 
-equity.gl_accounts.create(
-  account_code: '32',
-  name: 'Retained Earnings',
-  parent_id: 3,
-  description: 'Retained Earnings'
+liability.gl_accounts.create(
+  account_code: '2',
+  name: 'LIABILITIES',
+  parent_account: nil,
+  description: nil
 )
 
 liability.gl_accounts.create(
   account_code: '20',
   name: 'Accounts Payable',
-  parent_id: '2',
+  parent_account: '2',
   description: 'Accounts Payable'
 )
 
 liability.gl_accounts.create(
   account_code: '21',
   name: 'Credit Card',
-  parent_id: '2',
+  parent_account: '2',
   description: 'Credit Card'
 )
+
 liability.gl_accounts.create(
   account_code: '22',
   name: 'VA Sales tax',
-  parent_id: '2',
+  parent_account: '2',
   description: 'VA Sales Tax'
+)
+
+equity.gl_accounts.create(
+  account_code: '3',
+  name: 'EQUITY',
+  parent_account: nil,
+  description: nil
+)
+
+equity.gl_accounts.create(
+  account_code: '31',
+  name: 'Opening Balances',
+  parent_account: '3',
+  description: 'Opening Balances'
+)
+
+equity.gl_accounts.create(
+  account_code: '32',
+  name: 'Retained Earnings',
+  parent_account: '3',
+  description: 'Retained Earnings'
 )
 
 income.gl_accounts.create(
   account_code: '5',
   name: 'INCOME',
-  parent_id: nil,
+  parent_account: nil,
   description: ''
 )
+
 income.gl_accounts.create(
   account_code: '51',
   name: 'Bonus',
-  parent_id: 5,
+  parent_account: '5',
   description: 'Bonus'
 )
+
 income.gl_accounts.create(
   account_code: '56',
   name: 'Sales',
-  parent_id: 5,
+  parent_account: '5',
   description: 'Sales'
 )
