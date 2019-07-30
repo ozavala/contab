@@ -1,0 +1,2 @@
+module GlTransactionsHelper
+end
