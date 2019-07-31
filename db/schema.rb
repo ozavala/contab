@@ -10,39 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_31_002801) do
+ActiveRecord::Schema.define(version: 2019_07_31_183256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "account_types", force: :cascade do |t|
+  create_table "account_categories", force: :cascade do |t|
     t.string "name"
-    t.string "from_code"
-    t.string "thru_code"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "gl_accounts", force: :cascade do |t|
-    t.bigint "account_type_id"
+    t.bigint "account_category_id"
     t.string "account_code"
     t.string "parent_code"
     t.string "name"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["account_type_id"], name: "index_gl_accounts_on_account_type_id"
+    t.index ["account_category_id"], name: "index_gl_accounts_on_account_category_id"
   end
 
   create_table "gl_transactions", force: :cascade do |t|
-    t.bigint "transaction_type_id"
+    t.bigint "transaction_category_id"
     t.date "transaction_date"
     t.integer "from_party"
     t.integer "to_party"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["transaction_type_id"], name: "index_gl_transactions_on_transaction_type_id"
+    t.index ["transaction_category_id"], name: "index_gl_transactions_on_transaction_category_id"
+  end
+
+  create_table "transaction_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "transaction_details", force: :cascade do |t|
@@ -53,21 +59,15 @@ ActiveRecord::Schema.define(version: 2019_07_31_002801) do
     t.decimal "cr_amount", precision: 20, scale: 10
     t.decimal "tr_amount", precision: 20, scale: 10
     t.integer "c_flag"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["gl_account_id"], name: "index_transaction_details_on_gl_account_id"
     t.index ["gl_transaction_id"], name: "index_transaction_details_on_gl_transaction_id"
   end
 
-  create_table "transaction_types", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "gl_accounts", "account_types"
-  add_foreign_key "gl_transactions", "transaction_types"
+  add_foreign_key "gl_accounts", "account_categories"
+  add_foreign_key "gl_transactions", "transaction_categories"
   add_foreign_key "transaction_details", "gl_accounts"
   add_foreign_key "transaction_details", "gl_transactions"
 end

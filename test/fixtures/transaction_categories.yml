@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: transaction_types
+# Table name: transaction_categories
 #
 #  id          :bigint           not null, primary key
 #  name        :string

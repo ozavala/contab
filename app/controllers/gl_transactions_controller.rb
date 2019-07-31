@@ -69,6 +69,6 @@ class GlTransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gl_transaction_params
-      params.require(:gl_transaction).permit(:transaction_type_id, :transaction_date, :from_party, :to_party, :description)
+      params.require(:gl_transaction).permit(:transaction_category_id, :transaction_date, :from_party, :to_party, :description)
     end
 end

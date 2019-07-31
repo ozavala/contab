@@ -5,40 +5,36 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-AccountType.destroy_all
 
-AccountType.create(
+AccountCategory.destroy_all
+
+AccountCategory.create(
   name: 'Assets',
-  from_code: '1',
-  to_code: '2'
+  description: 'Assets are what the enterprise owns'
 )
-AccountType.create(
+AccountCategory.create(
   name: 'Liability',
-  from_code: '2',
-  to_code: '3'
+  description: 'Liabilities are what the enterprise owes.'
 )
-AccountType.create(
+AccountCategory.create(
   name: 'Equity',
-  from_code: '3',
-  to_code: '4'
+  description: "Equity represents the shareholder's stake in the company."
 )
 
-AccountType.create(
+AccountCategory.create(
   name: 'Expenses',
-  from_code: '4',
-  to_code: '5'
+  description: 'Whatever the enterprise consumes is recorded in a consumption or expense account'
 )
-AccountType.create(
+AccountCategory.create(
   name: 'Income',
-  from_code: '5',
-  to_code: '6'
+  description: "Whatever the enterprise produces is recorded in a production or income account"
 )
 
-assets = AccountType.find_by(name: 'Assets')
-liability = AccountType.find_by(name: 'Liability')
-equity = AccountType.find_by(name: 'Equity')
-expenses = AccountType.find_by(name: 'Expenses')
-income = AccountType.find_by(name: 'Income')
+assets = AccountCategory.find_by(name: 'Assets')
+liability = AccountCategory.find_by(name: 'Liability')
+equity = AccountCategory.find_by(name: 'Equity')
+expenses = AccountCategory.find_by(name: 'Expenses')
+income = AccountCategory.find_by(name: 'Income')
 
 GlAccount.destroy_all
 
@@ -182,3 +178,40 @@ income.gl_accounts.create(
   description: 'Sales'
 )
 puts "Income accounts created"
+
+#### TRANSACTIONS ####
+TransactionCategory.destroy_all
+
+TransactionCategory.create(
+  name: 'Adjustment',
+  description: 'Adjustment of accounts, inventory, depreciation'
+)
+TransactionCategory.create(
+  name: 'Gl-Transaction',
+  description: 'Internal transactions, purchase, sales, withdrawal, expenses, bank deposits'
+)
+TransactionCategory.create(
+  name: 'Transference',
+  description: 'Internal and external transferences, prepayment, deposit in guaranty'
+)
+
+puts 'Created TransactionCategory Accounts '
+
+adtransac = TransactionCategory.find_by(name: 'Adjustment')
+gltransac = TransactionCategory.find_by(name: 'Gl-Transaction')
+
+GlTransaction.destroy_all
+
+t1 = adtransac.gl_transactions.create(
+  transaction_date: Time.now,
+  description: 'Initial balance'
+)
+
+t1.transaction_details.create(
+  gl_account_id: 12,
+  document_number: '1234-5',
+  cr_amount: 2000.00,
+  description: 'Stock holder deposit'
+
+)
+puts 'Transaction Details created'

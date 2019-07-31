@@ -17,8 +17,8 @@ class GlTransactionsTest < ApplicationSystemTestCase
     fill_in "Description", with: @gl_transaction.description
     fill_in "From party", with: @gl_transaction.from_party
     fill_in "To party", with: @gl_transaction.to_party
+    fill_in "Transaction category", with: @gl_transaction.transaction_category_id
     fill_in "Transaction date", with: @gl_transaction.transaction_date
-    fill_in "Transaction type", with: @gl_transaction.transaction_type_id
     click_on "Create Gl transaction"
 
     assert_text "Gl transaction was successfully created"
@@ -32,8 +32,8 @@ class GlTransactionsTest < ApplicationSystemTestCase
     fill_in "Description", with: @gl_transaction.description
     fill_in "From party", with: @gl_transaction.from_party
     fill_in "To party", with: @gl_transaction.to_party
+    fill_in "Transaction category", with: @gl_transaction.transaction_category_id
     fill_in "Transaction date", with: @gl_transaction.transaction_date
-    fill_in "Transaction type", with: @gl_transaction.transaction_type_id
     click_on "Update Gl transaction"
 
     assert_text "Gl transaction was successfully updated"

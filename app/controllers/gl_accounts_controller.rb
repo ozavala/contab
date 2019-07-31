@@ -69,6 +69,6 @@ class GlAccountsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gl_account_params
-      params.require(:gl_account).permit(:account_type_id, :account_code, :parent_code, :name, :description)
+      params.require(:gl_account).permit(:account_category_id, :account_code, :parent_code, :name, :description)
     end
 end

@@ -14,8 +14,8 @@ class GlAccountsTest < ApplicationSystemTestCase
     visit gl_accounts_url
     click_on "New Gl Account"
 
+    fill_in "Account category", with: @gl_account.account_category_id
     fill_in "Account code", with: @gl_account.account_code
-    fill_in "Account type", with: @gl_account.account_type_id
     fill_in "Description", with: @gl_account.description
     fill_in "Name", with: @gl_account.name
     fill_in "Parent code", with: @gl_account.parent_code
@@ -29,8 +29,8 @@ class GlAccountsTest < ApplicationSystemTestCase
     visit gl_accounts_url
     click_on "Edit", match: :first
 
+    fill_in "Account category", with: @gl_account.account_category_id
     fill_in "Account code", with: @gl_account.account_code
-    fill_in "Account type", with: @gl_account.account_type_id
     fill_in "Description", with: @gl_account.description
     fill_in "Name", with: @gl_account.name
     fill_in "Parent code", with: @gl_account.parent_code

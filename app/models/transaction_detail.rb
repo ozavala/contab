@@ -10,6 +10,7 @@
 #  cr_amount         :decimal(20, 10)
 #  tr_amount         :decimal(20, 10)
 #  c_flag            :integer
+#  description       :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #

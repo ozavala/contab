@@ -17,7 +17,7 @@ class GlAccountsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create gl_account" do
     assert_difference('GlAccount.count') do
-      post gl_accounts_url, params: { gl_account: { account_code: @gl_account.account_code, account_type_id: @gl_account.account_type_id, description: @gl_account.description, name: @gl_account.name, parent_code: @gl_account.parent_code } }
+      post gl_accounts_url, params: { gl_account: { account_category_id: @gl_account.account_category_id, account_code: @gl_account.account_code, description: @gl_account.description, name: @gl_account.name, parent_code: @gl_account.parent_code } }
     end
 
     assert_redirected_to gl_account_url(GlAccount.last)
@@ -34,7 +34,7 @@ class GlAccountsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update gl_account" do
-    patch gl_account_url(@gl_account), params: { gl_account: { account_code: @gl_account.account_code, account_type_id: @gl_account.account_type_id, description: @gl_account.description, name: @gl_account.name, parent_code: @gl_account.parent_code } }
+    patch gl_account_url(@gl_account), params: { gl_account: { account_category_id: @gl_account.account_category_id, account_code: @gl_account.account_code, description: @gl_account.description, name: @gl_account.name, parent_code: @gl_account.parent_code } }
     assert_redirected_to gl_account_url(@gl_account)
   end
 

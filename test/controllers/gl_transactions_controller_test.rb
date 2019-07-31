@@ -17,7 +17,7 @@ class GlTransactionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create gl_transaction" do
     assert_difference('GlTransaction.count') do
-      post gl_transactions_url, params: { gl_transaction: { description: @gl_transaction.description, from_party: @gl_transaction.from_party, to_party: @gl_transaction.to_party, transaction_date: @gl_transaction.transaction_date, transaction_type_id: @gl_transaction.transaction_type_id } }
+      post gl_transactions_url, params: { gl_transaction: { description: @gl_transaction.description, from_party: @gl_transaction.from_party, to_party: @gl_transaction.to_party, transaction_category_id: @gl_transaction.transaction_category_id, transaction_date: @gl_transaction.transaction_date } }
     end
 
     assert_redirected_to gl_transaction_url(GlTransaction.last)
@@ -34,7 +34,7 @@ class GlTransactionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update gl_transaction" do
-    patch gl_transaction_url(@gl_transaction), params: { gl_transaction: { description: @gl_transaction.description, from_party: @gl_transaction.from_party, to_party: @gl_transaction.to_party, transaction_date: @gl_transaction.transaction_date, transaction_type_id: @gl_transaction.transaction_type_id } }
+    patch gl_transaction_url(@gl_transaction), params: { gl_transaction: { description: @gl_transaction.description, from_party: @gl_transaction.from_party, to_party: @gl_transaction.to_party, transaction_category_id: @gl_transaction.transaction_category_id, transaction_date: @gl_transaction.transaction_date } }
     assert_redirected_to gl_transaction_url(@gl_transaction)
   end
 

@@ -2,27 +2,27 @@
 #
 # Table name: gl_accounts
 #
-#  id              :bigint           not null, primary key
-#  account_type_id :bigint
-#  account_code    :string
-#  parent_code     :string
-#  name            :string
-#  description     :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                  :bigint           not null, primary key
+#  account_category_id :bigint
+#  account_code        :string
+#  parent_code         :string
+#  name                :string
+#  description         :string
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  account_type: one
+  account_category: one
   account_code: MyString
   parent_code: MyString
   name: MyString
   description: MyString
 
 two:
-  account_type: two
+  account_category: two
   account_code: MyString
   parent_code: MyString
   name: MyString

@@ -2,28 +2,28 @@
 #
 # Table name: gl_transactions
 #
-#  id                  :bigint           not null, primary key
-#  transaction_type_id :bigint
-#  transaction_date    :date
-#  from_party          :integer
-#  to_party            :integer
-#  description         :string
-#  created_at          :datetime         not null
-#  updated_at          :datetime         not null
+#  id                      :bigint           not null, primary key
+#  transaction_category_id :bigint
+#  transaction_date        :date
+#  from_party              :integer
+#  to_party                :integer
+#  description             :string
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  transaction_type: one
-  transaction_date: 2019-07-30
+  transaction_category: one
+  transaction_date: 2019-07-31
   from_party: 1
   to_party: 1
   description: MyString
 
 two:
-  transaction_type: two
-  transaction_date: 2019-07-30
+  transaction_category: two
+  transaction_date: 2019-07-31
   from_party: 1
   to_party: 1
   description: MyString

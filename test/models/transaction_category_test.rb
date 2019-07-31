@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: transaction_types
+# Table name: transaction_categories
 #
 #  id          :bigint           not null, primary key
 #  name        :string
@@ -9,6 +9,10 @@
 #  updated_at  :datetime         not null
 #
 
-class TransactionType < ApplicationRecord
-  has_many :gl_transactions, dependent: :destroy
+require 'test_helper'
+
+class TransactionCategoryTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

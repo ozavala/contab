@@ -8,6 +8,7 @@ class CreateTransactionDetails < ActiveRecord::Migration[5.2]
       t.decimal :cr_amount, precision: 20, scale: 10
       t.decimal :tr_amount, precision: 20, scale: 10
       t.integer :c_flag
+      t.string :description
 
       t.timestamps
     end

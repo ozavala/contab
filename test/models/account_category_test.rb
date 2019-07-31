@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: transaction_types
+# Table name: account_categories
 #
 #  id          :bigint           not null, primary key
 #  name        :string
@@ -11,7 +11,7 @@
 
 require 'test_helper'
 
-class TransactionTypeTest < ActiveSupport::TestCase
+class AccountCategoryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Account type</th>
+      <th>Account category</th>
       <th>Account code</th>
       <th>Parent code</th>
       <th>Name</th>
@@ -17,7 +17,7 @@
   <tbody>
     <% @gl_accounts.each do |gl_account| %>
       <tr>
-        <td><%= gl_account.account_type %></td>
+        <td><%= gl_account.account_category_id %></td>
         <td><%= gl_account.account_code %></td>
         <td><%= gl_account.parent_code %></td>
         <td><%= gl_account.name %></td>

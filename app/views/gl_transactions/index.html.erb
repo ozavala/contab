@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Transaction type</th>
+      <th>Transaction category</th>
       <th>Transaction date</th>
       <th>From party</th>
       <th>To party</th>
@@ -17,7 +17,7 @@
   <tbody>
     <% @gl_transactions.each do |gl_transaction| %>
       <tr>
-        <td><%= gl_transaction.transaction_type %></td>
+        <td><%= gl_transaction.transaction_category_id %></td>
         <td><%= gl_transaction.transaction_date %></td>
         <td><%= gl_transaction.from_party %></td>
         <td><%= gl_transaction.to_party %></td>
