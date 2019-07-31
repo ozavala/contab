@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gl_transaction: one
+  gl_account: one
+  document_number: MyString
+  db_amount: 9.99
+  cr_amount: 9.99
+  tr_amount: 9.99
+  c_flag: 1
+
+two:
+  gl_transaction: two
+  gl_account: two
+  document_number: MyString
+  db_amount: 9.99
+  cr_amount: 9.99
+  tr_amount: 9.99
+  c_flag: 1

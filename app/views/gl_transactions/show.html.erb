@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Transaction type:</strong>
+  <%= @gl_transaction.transaction_type %>
+</p>
+
+<p>
+  <strong>Transaction date:</strong>
+  <%= @gl_transaction.transaction_date %>
+</p>
+
+<p>
+  <strong>From party:</strong>
+  <%= @gl_transaction.from_party %>
+</p>
+
+<p>
+  <strong>To party:</strong>
+  <%= @gl_transaction.to_party %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @gl_transaction.description %>
+</p>
+
+<%= link_to 'Edit', edit_gl_transaction_path(@gl_transaction) %> |
+<%= link_to 'Back', gl_transactions_path %>
