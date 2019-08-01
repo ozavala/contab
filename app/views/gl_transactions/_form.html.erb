@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :transaction_category_id %>
-    <%= form.text_field :transaction_category_id %>
+    <%= form.collection_select :transaction_category_id, TransactionCategory.all, :id, :name, prompt: 'Categories', allow_blank: false %>
   </div>
 
   <div class="field">
@@ -35,6 +35,18 @@
     <%= form.label :description %>
     <%= form.text_field :description %>
   </div>
+
+  <div>
+    <%= form.fields_for :transaction_details, TransactionDetail.new do |builder|%>
+      <%#= render 'details', f: builder %>
+      <%= builder.collection_select :gl_account_id, GlAccount.all, :id, :name %>
+      <%= builder.text_field :document_number, placeholder: 'Reference No.' %>
+      <%= builder.text_field :cr_amount, placeholder: 'Credit Amount' %>
+      <%= builder.text_field :db_amount, placeholder: 'Debit Amount' %>
+      <%= builder.text_field :tr_amount, placeholder: 'Transfers Amount' %>
+      <%#= builder.text_field :balance, placeholder: 'Balance Amount' %>
+    <% end %>
+    </div>
 
   <div class="actions">
     <%= form.submit %>

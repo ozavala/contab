@@ -1,0 +1,6 @@
+<%= f.collection_select :gl_account_id, GlAccount.all, :id, :name %>
+<%= f.text_field :document_number, placeholder: 'Reference No.' %>
+<%= f.text_field :cr_amount, placeholder: 'Credit Amount' %>
+<%= f.text_field :db_amount, placeholder: 'Debit Amount' %>
+<%= f.text_field :tr_amount, placeholder: 'Transfers Amount' %>
+<%= f.text_field :balance, placeholder: 'Balance Amount' %>

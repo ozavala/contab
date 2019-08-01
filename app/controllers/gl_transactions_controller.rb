@@ -25,7 +25,7 @@ class GlTransactionsController < ApplicationController
   # POST /gl_transactions.json
   def create
     @gl_transaction = GlTransaction.new(gl_transaction_params)
-
+     byebug
     respond_to do |format|
       if @gl_transaction.save
         format.html { redirect_to @gl_transaction, notice: 'Gl transaction was successfully created.' }
@@ -69,6 +69,6 @@ class GlTransactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gl_transaction_params
-      params.require(:gl_transaction).permit(:transaction_category_id, :transaction_date, :from_party, :to_party, :description)
+      params.require(:gl_transaction).permit(:transaction_category_id, :transaction_date, :from_party, :to_party, :description, transaction_details_attributes: TransactionDetail.attribute_names.map(&:to_sym).push(:_destroy,  :balance))
     end
 end

@@ -15,4 +15,5 @@
 class GlTransaction < ApplicationRecord
   belongs_to :transaction_category
   has_many :transaction_details, dependent: :destroy
-end 
+  accepts_nested_attributes_for :transaction_details, allow_destroy: true, reject_if: :all_blank
+end
