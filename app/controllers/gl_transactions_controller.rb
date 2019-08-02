@@ -25,7 +25,7 @@ class GlTransactionsController < ApplicationController
   # POST /gl_transactions.json
   def create
     @gl_transaction = GlTransaction.new(gl_transaction_params)
-     byebug
+
     respond_to do |format|
       if @gl_transaction.save
         format.html { redirect_to @gl_transaction, notice: 'Gl transaction was successfully created.' }
